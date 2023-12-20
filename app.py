@@ -229,7 +229,7 @@ def main():
     if selected == "Tentang":
         home5, home6 = st.columns(2)
         with home5:
-            st.image('source/profile.jpg', caption='', width=200)
+            st.image('source/profile.jpg', caption='', width=250)
         with home6:
             st.markdown("""
                 A third-year information technology student. Interested in the field of artificial intelligence, data
