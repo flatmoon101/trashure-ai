@@ -20,9 +20,13 @@ def load_model():
     return model, class_names
 
 def beranda():
-    st.title('Trashure.ai')
 
-    st.image("source/logo.png", width=200)
+    _, col2, _ = st.columns(3)
+
+    with col2:
+        st.title('Trashure.ai')
+
+        st.image("source/logo.png", width=200)
 
     st.markdown('''
     Selamat datang di **Trashure.ai**. Web ini mengeksplorasi dunia klasifikasi sampah yang memadukan 
@@ -156,10 +160,61 @@ def solution(nama_kelas_index, nama_kelas):
         alat_makan()
 
 def main():
+    st.markdown("""
+        <style>
+            body {
+            font-family: "Source Sans Pro", sans-serif;
+            }
+            .custom-grid-right, .custom-grid-left {
+            position: relative;
+            display: flex;
+            /* flex-direction: column-reverse; */
+            }
+            @media screen and (max-width: 1000px) {
+            .custom-grid-right {
+                flex-direction: column-reverse;
+            }
+            .custom-grid-left {
+                flex-direction: column;
+            }
+            }
+            .custom-grid-item {
+            position: relative;
+            padding: 1rem;
+            }
+            .about_us-title {
+            font-size: 1.8rem;
+            position: relative;
+            }
+            .about_us-text {
+            margin-right: 0;
+            }
+            .text-justify {
+                text-align:justify;
+            }
+                .css-1kyxreq {
+                justify-content:center!important;
+                }
+            a.btn, .btn {
+                text-decoration:none;
+                padding:1rem;
+                border-radius:20px;
+                border:solid 1px #79AF9E;
+                background-color: #79AF9E;
+                color:white;
+                transition: all 1s:
+
+            }
+            a.btn .btn:hover {
+                background-color:white ;
+                color:#79AF9E;
+            }
+        </style>""" ,unsafe_allow_html=True)
+
     model, class_names = load_model()
 
-    selected = option_menu(None, ['Beranda', 'Klasifikasi Sampah', 'Informasi Pengolahan Sampah'],
-        icons=['house', 'circle-half', 'globe'],
+    selected = option_menu(None, ['Beranda', 'Klasifikasi Sampah', 'Tentang'],
+        icons=['house', 'patch-question-fill', 'file-earmark-person'],
         menu_icon='cast', 
         default_index=0, 
         orientation='horizontal'
@@ -170,6 +225,22 @@ def main():
 
     if selected == 'Klasifikasi Sampah':
         klasifikasi(model, class_names)
+
+    if selected == "Tentang":
+        home5, home6 = st.columns(2)
+        with home5:
+            st.image('source/profile.jpg', caption='', width=200)
+        with home6:
+            st.markdown("""
+                A third-year information technology student. Interested in the field of artificial intelligence, data
+                analyst and data science. Understand several programming languages such as Java, Python,
+                C++, C#, and MySQL databases. Experienced in multiple projects such as machine learning
+                project, Android development, IoT development, game development. Studied in several
+                bootcamp such as Bangkit Machine Learning cohort and Mastering AI Bootcamp in ruangguru.
+                Looking for opportunities to develop into a professional career as data analyst or AI engineer.
+
+                ***[Connect me in LinkedIn](https://www.linkedin.com/in/rubensjuristanto/)***
+                """)
         
 
 if __name__ == "__main__":
