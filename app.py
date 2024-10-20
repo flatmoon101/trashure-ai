@@ -226,21 +226,21 @@ def main():
     if selected == 'Klasifikasi Sampah':
         klasifikasi(model, class_names)
 
-    if selected == "Tentang":
-        home5, home6 = st.columns(2)
-        with home5:
-            st.image('source/profile.jpg', caption='', width=250)
-        with home6:
-            st.markdown("""
-                A third-year information technology student. Interested in the field of artificial intelligence, data
-                analyst and data science. Understand several programming languages such as Java, Python,
-                C++, C#, and MySQL databases. Experienced in multiple projects such as machine learning
-                project, Android development, IoT development, game development. Studied in several
-                bootcamp such as Bangkit Machine Learning cohort and Mastering AI Bootcamp in ruangguru.
-                Looking for opportunities to develop into a professional career as data analyst or AI engineer.
+    # if selected == "Tentang":
+    #     home5, home6 = st.columns(2)
+    #     with home5:
+    #         st.image('source/profile.jpg', caption='', width=250)
+    #     with home6:
+    #         st.markdown("""
+    #             A third-year information technology student. Interested in the field of artificial intelligence, data
+    #             analyst and data science. Understand several programming languages such as Java, Python,
+    #             C++, C#, and MySQL databases. Experienced in multiple projects such as machine learning
+    #             project, Android development, IoT development, game development. Studied in several
+    #             bootcamp such as Bangkit Machine Learning cohort and Mastering AI Bootcamp in ruangguru.
+    #             Looking for opportunities to develop into a professional career as data analyst or AI engineer.
 
-                ***[Connect me in LinkedIn](https://www.linkedin.com/in/rubensjuristanto/)***
-                """)
+    #             ***[Connect me in LinkedIn](https://www.linkedin.com/in/rubensjuristanto/)***
+    #             """)
         
 
 if __name__ == "__main__":
